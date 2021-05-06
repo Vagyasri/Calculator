@@ -18,6 +18,10 @@ class Calculator
   def divide(a, b)
     a / b
   end
+
+  def modulus(a, b)
+    a % b
+  end
 end
 
 # rubocop: enable Naming/MethodParameterName, Style/Documentation
