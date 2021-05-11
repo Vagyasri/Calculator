@@ -6,8 +6,9 @@ require './lib/calculator'
 
 describe Calculator do
   describe '#add' do
-    it 'returns the sum of two numbers' do
-      calculator = Calculator.new
+    it 'returns the sum of three numbers' do
+       calculator = Calculator.new
+      #let (:calculator) {Calculator.new}
       expect(calculator.add(2, 5, 7)).to eql(14)
     end
   end
