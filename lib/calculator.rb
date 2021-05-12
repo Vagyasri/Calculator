@@ -1,28 +1,31 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-# rubocop: disable Naming/MethodParameterName, Style/Documentation
+# rubocop: disable Naming/MethodParameterName, Style/Documentation, Lint/AmbiguousBlockAssociation
 
 class Calculator
-  def add(a, b, c)
-    a + b + c
+  def add(*a)
+    puts a.inject { |x, y| x + y }
   end
 
-  def subtract(a, b)
-    a - b
+  def subtract(*a)
+    puts a.inject { |x, y| x - y }
   end
 
-  def multiply(a, b)
-    a * b
+  def multiply(*a)
+    puts a.inject { |x, y| x * y }
   end
 
-  def divide(a, b)
-    a / b
+  def divide(*a)
+    puts a.inject { |x, y| x / y }
   end
 
   def modulus(a, b)
-    a % b
+    puts a % b
   end
 end
 
-# rubocop: enable Naming/MethodParameterName, Style/Documentation
+# rubocop: enable Naming/MethodParameterName, Style/Documentation, Lint/AmbiguousBlockAssociation
+
+Calc = Calculator.new
+Calc.modulus(1, 2)
